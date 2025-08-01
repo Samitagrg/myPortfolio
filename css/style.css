@@ -11,6 +11,28 @@ body {
     height: 100vh;
 }
 
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gamebackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.character {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    image-rendering: pixelated;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+}
+
 .info-panel {
     position: absolute;
     background: black;
@@ -38,29 +60,45 @@ body {
     font-size: 12px;
 }
 
+.section {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #00ff00;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
 .bio { 
-    top: 20px; 
-    left: 20px; 
+    top: 210px; 
+    left: 110px; 
 }
 
 .skills { 
-    top: 20px; 
-    right: 20px; 
+    top: 50px; 
+    right: 80px; 
 }
 
 .projects { 
-    bottom: 20px; 
-    left: 20px; 
+    bottom: 80px; 
+    left: 120px; 
 }
 
 .contact { 
-    bottom: 20px; 
-    right: 20px; 
+    bottom: 80px; 
+    right: 44%; 
 }
 
 .resume { 
     top: 50%; 
-    right: 20px; 
+    right: 90px; 
     transform: translateY(-50%); 
 }
 
