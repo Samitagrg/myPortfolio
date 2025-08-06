@@ -13,24 +13,67 @@ body {
 
 .game-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    background-image: url('../images/wooden\ floor.jpeg');
+    background-repeat: repeat;
+    background-size: 90px 70px;
+    border: #291101 20px solid;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.gamebackground {
+.background {
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.plant1 {
+    background-image: url('../images/plant1.png');
+    background-size: contain;
+    image-rendering: pixelated;
+    background-position: top right;
+    bottom: 150px;
+    right: 150px;
+}
+.plant2 {
+    background-image: url('../images/plant2.png');
+    background-size: contain;
+    image-rendering: pixelated;
+    bottom: 200px;
+    left: 10px;
+}
+.plant3 {
+    background-image: url('../images/plant3.png');
+    background-size: contain;
+    image-rendering: pixelated;
+    top: 0;
+    right: 200px;
+}
+.carpet1 {
+    background-image: url('../images/carpet1.png');
+    background-size: contain;
+    image-rendering: pixelated;
+    bottom: 200px;
+    right: 600px;
+}
+
 
 .character {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 120px;
+    height: 120px;
     image-rendering: pixelated;
+    image-rendering: -webkit-optimize-contrast; 
     z-index: 10;
-    top: 50%;
-    left: 50%;
+    top: 10;
+    left: 50%
 }
 
 .info-panel {
@@ -44,7 +87,7 @@ body {
     max-width: 300px;
     z-index: 20;
     box-shadow: 0 0 20px rgb(133, 64, 133);
-        opacity: 0;
+    opacity: 0;
     transform: scale(0.8);
     transition: all 0.3s ease;
 }
@@ -62,43 +105,53 @@ body {
 
 .section {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 255, 0, 0.2);
-    border: 2px solid #00ff00;
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+    /* background: rgba(136, 57, 1, 0.475); */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 8px;
-    color: #00ff00;
-    text-align: center;
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
 }
 
-.bio { 
-    top: 210px; 
-    left: 110px; 
+.bio {
+    background-image: url('../images/bio.png');
+    background-size: 210px 210px;
+    background-position: top left;
+    image-rendering: pixelated;
+    top: 0px; 
+    left: 0px; 
 }
 
-.skills { 
+.skills {
+    background-image: url('../images/skills.png');
+    background-size: 180px 180px;
+    background-position: top right;
     top: 50px; 
-    right: 80px; 
+    right: 20px; 
 }
 
-.projects { 
-    bottom: 80px; 
+.projects {
+    background-image: url('../images/projects.png');
+    background-size: 150px 150px;
+    background-position: bottom left;
+    bottom: 30px; 
     left: 120px; 
 }
 
 .contact { 
-    bottom: 80px; 
-    right: 44%; 
+    background-image: url('../images/contact.png');
+    background-size: 150px 150px;
+    background-position: bottom right;
+    bottom: 30px; 
+    right: 210px; 
 }
 
-.resume { 
+/* .resume { 
     top: 50%; 
     right: 90px; 
     transform: translateY(-50%); 
-}
+} */
 
