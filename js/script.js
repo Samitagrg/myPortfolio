@@ -106,8 +106,8 @@ function initPetAnimation() {
     
     // Get container dimensions
     const containerRect = gameContainer.getBoundingClientRect();
-    const petWidth = 80;
-    const petHeight = 80;
+    const petWidth = 80; 
+    const petHeight = 80; 
     
     // Create a floating path - horizontal movement with slight vertical variation
     const path = [
