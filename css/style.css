@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Press Start 2P', cursive;
+    font-size: medium;
     background: linear-gradient(45deg, #1a1a2e, #16213e);
     overflow: hidden;
     height: 100vh;
@@ -13,15 +14,84 @@ body {
 
 .game-container {
     position: relative;
-    background-image: url('../images/wooden\ floor.jpeg');
-    background-repeat: repeat;
-    background-size: 90px 70px;
+    width: 100vw;
+    height: 100vh;
     border: #291101 20px solid;
+}
+
+.wallpaper {
+    position: absolute;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 20%;
+    background-image: url('../images/wallpaper2.jpeg');
+    background-repeat: repeat;
+    background-size: 80px 90px;
+    background-position: center;
+    z-index: 1;
+    top: 0;
+}
+
+.window {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    image-rendering: pixelated;
+    z-index: 2;
+    right: 280px;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+.pics {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    image-rendering: pixelated;
+    z-index: 2;
+    left: 450px;
+    top: -40px;
+    transform: translateX(-50%);
+}
+
+.door {
+    position: absolute;
+    width: 165px;
+    height: 135px;
+    z-index: 2;
+    left: 740px;
+    top: 5px;
+}
+
+.lights1 {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    image-rendering: pixelated;
+    z-index: 2;
+    left: 700px;
+    top: 10px;
+    transform: translateX(-50%);
+}
+.lights2 {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    image-rendering: pixelated;
+    z-index: 2;
+    right: 500px;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+.floor {
+    position: absolute;
+    background-image: url('../images/woodenfloor.jpeg');
+    background-repeat: repeat;
+    background-size: 200px 150px;
+    border-top: #291101 1px solid;
+    width: 100%;
+    height: 80%;
+    top: 20%;
 }
 
 .background {
@@ -32,38 +102,54 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .plant1 {
-    background-image: url('../images/plant1.png');
-    background-size: contain;
-    image-rendering: pixelated;
-    background-position: top right;
+    position: absolute;
+    width: 330px;
+    height: 330px;
     bottom: 150px;
-    right: 150px;
+    right: 0px;
+    image-rendering: pixelated;
+    z-index: 11;
 }
 .plant2 {
-    background-image: url('../images/plant2.png');
-    background-size: contain;
-    image-rendering: pixelated;
-    bottom: 200px;
-    left: 10px;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    bottom: 255px;
+    left: 0px;
+    z-index: 11;
 }
 .plant3 {
-    background-image: url('../images/plant3.png');
-    background-size: contain;
+    position: absolute;
+    width: 230px;
+    height: 230px;
     image-rendering: pixelated;
-    top: 0;
-    right: 200px;
+    top: -130px;
+    right: 330px;
+    z-index: 9;
 }
 .carpet1 {
-    background-image: url('../images/carpet1.png');
-    background-size: contain;
+    position: absolute;
+    width: 310px;
+    height: 310px;
     image-rendering: pixelated;
-    bottom: 200px;
-    right: 600px;
+    bottom: 100px;
+    right: 400px;
+    z-index: 3;
 }
 
+.sofa {
+    position: absolute;
+    width: 310px;
+    height: 360px;
+    image-rendering: pixelated;
+    bottom: 100px;
+    left: 300px;
+    z-index: 9;
+}
 
 .character {
     position: absolute;
@@ -73,27 +159,41 @@ body {
     image-rendering: -webkit-optimize-contrast; 
     z-index: 10;
     top: 10;
-    left: 50%
+    left: 50%;
+    transition: all 0.3s ease;
+}
+
+.pet {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    image-rendering: pixelated;
+    z-index: 12;
+    bottom: -80px;
+    left: 700px;
+    transform: translate(-50%, -50%);
 }
 
 .info-panel {
     position: absolute;
-    background: black;
+    background: rgba(77, 30, 1, 0.841);
     border: 3px solid;
     border-radius: 10px;
     padding: 20px;
     color: rgb(238, 130, 238);
     font-size: 10px;
-    max-width: 300px;
+    max-width: 350px;
     z-index: 20;
     box-shadow: 0 0 20px rgb(133, 64, 133);
     opacity: 0;
+    visibility: hidden;
     transform: scale(0.8);
     transition: all 0.3s ease;
 }
 
 .info-panel.active {
     opacity: 1;
+    visibility: visible;
     transform: scale(1);
 }
 
@@ -101,57 +201,80 @@ body {
     color: #ff6b6b;
     margin-bottom: 15px;
     font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.section {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background-repeat: no-repeat;
-    /* background: rgba(136, 57, 1, 0.475); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
+
+/* @keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.7; 
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 1; 
+    }
+} */
 
 .bio {
-    background-image: url('../images/bio.png');
-    background-size: 210px 210px;
-    background-position: top left;
+    position: absolute;
+    width: 230px;
+    height: 230px;
     image-rendering: pixelated;
-    top: 0px; 
-    left: 0px; 
+    top: -20px; 
+    left: 20px;
+    z-index: 3;
 }
 
 .skills {
-    background-image: url('../images/skills.png');
-    background-size: 180px 180px;
-    background-position: top right;
-    top: 50px; 
-    right: 20px; 
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    image-rendering: pixelated;
+    bottom: 70px; 
+    left: 40px;
+    z-index: 3;
 }
 
 .projects {
-    background-image: url('../images/projects.png');
-    background-size: 150px 150px;
-    background-position: bottom left;
-    bottom: 30px; 
-    left: 120px; 
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    image-rendering: pixelated;
+    top: 20px; 
+    right: 50px; 
+    z-index: 3;
 }
 
 .contact { 
-    background-image: url('../images/contact.png');
-    background-size: 150px 150px;
-    background-position: bottom right;
-    bottom: 30px; 
-    right: 210px; 
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+    bottom: 10px; 
+    right: 50px; 
+    z-index: 3;
 }
 
-/* .resume { 
-    top: 50%; 
-    right: 90px; 
-    transform: translateY(-50%); 
-} */
+.skill-bar {
+    background: #333;
+    height: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+}
 
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.project-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 3px solid #FFD700;
+    border-radius: 5px;
+}
