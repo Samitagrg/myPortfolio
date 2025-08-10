@@ -5,27 +5,36 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 </head>
 <body>
     <div class="game-container">
-        <div class="background plant1"></div>
-        <div class="background plant2"></div>
-        <div class="background plant3"></div>
-        <div class="background carpet1"></div>
-        
         <img src="./images/character.png" alt="my character" class="character" id="character">
 
+        <div class="wallpaper">  
+            <img src="./images/door.png" alt="door" class="door">
+            <img src="./images/window.jpeg" alt="window" class="window">
+            <img src="./images/pics.png" alt="pics" class="pics">
+            <img src="./images/lights.png" alt="lights1" class="lights1">
+            <img src="./images/lights.png" alt="lights2" class="lights2">
+        </div>
+        <div class="floor">
+            <img src="./images/plant1.png" alt="plant1" class="plant1">
+            <img src="./images/plant2.png" alt="plant2" class="plant2">
+            <img src="./images/plant3.png" alt="plant3" class="plant3">
+            <img src="./images/carpet1.png" alt="carpet1" class="carpet1">
+            <img src="./images/sofa.png" alt="sofa" class="sofa">
+            <img src="./images/pet.png" alt="pet" class="pet" id="pet">
+        </div>
 
+        <img src="./images/bookshelves.png" alt="bio" class="bio">
+        <img src="./images/arcade.png" alt="skills" class="skills">
+        <img src="./images/computer.png" alt="projects" class="projects">
+        <img src="./images/contact.png" alt="contact" class="contact">
 
-        <!-- Different sections -->
-        <div class="section bio"></div>
-        <div class="section skills"></div>
-        <div class="section projects"></div>
-        <div class="section contact"></div>
-        <div class="section resume"></div>
-
-        <!-- Info Panels -->
-        <div class="info-panel" id="bio-panel">
+            <!-- Info Panels -->
+        <div class="info-panel" id="bio-panel" style="top: 150px; left: 200px;">
             <h2>ABOUT ME</h2>
             <p>Hello! I'm a passionate BSCS student in my second year, diving deep into the world of web development and programming.</p>
             <br>
@@ -33,8 +42,8 @@
             <br>
             <p>When I'm not coding, I'll be playing video games or working on personal projects!</p>
         </div>
-        
-        <div class="info-panel" id="skills-panel">
+            
+        <div class="info-panel" id="skills-panel" style="bottom: 50px; left: 200px;">
             <h2>MY SKILLS</h2>
             <div style="margin: 10px 0;">
                 <div>HTML/CSS</div>
@@ -57,15 +66,15 @@
                 <div class="skill-bar"><div class="skill-fill" style="width: 50%;"></div></div>
             </div>
         </div>
-        
-        <div class="info-panel" id="projects-panel">
+            
+        <div class="info-panel" id="projects-panel" style="top: 210px; right: 250px;">
             <h2>MY PROJECTS</h2>
             <div class="project-item">
                 <strong>Chatty</strong><br>
                 Built with C++
             </div>
             <div class="project-item">
-                <strong>Music Player</strong><br>
+                 <strong>Music Player</strong><br>
                 Built with HTML, CSS, and JavaScript
             </div>
             <div class="project-item">
@@ -73,39 +82,24 @@
                 This website you're on!
             </div>
         </div>
-        
-        <div class="info-panel" id="contact-panel">
-            <h2>GET IN TOUCH</h2>
-            <p>📧 samita.gurung@westcliff.edu</p>
-            <br>
-            <p>📱 +977-98XXXXXXXX</p>
-            <br>
-            <p>🌐 github.com/samitagrg</p>
-            <br>
-            <p>💼 linkedin.com/in/samitagrg</p>
-            <br>
-            <p>Feel free to reach out for collaborations, questions or just to say hi!</p>
-        </div>
-        
-        <div class="info-panel" id="resume-panel">
-            <h2>RESUME</h2>
-            <p><strong>EDUCATION</strong></p>
-            <p>Bachelor of Science in Computer Science</p>
-            <p>Currently in 2nd Year</p>
-            <br>
-            <p><strong>COURSEWORK</strong></p>
-            <p>• Web Development</p>
-            <p>• Data Structures</p>
-            <p>• Object-Oriented Programming</p>
-            <p>• Database Management</p>
-            <br>
-            <p><strong>ACHIEVEMENTS</strong></p>
-            <p>• Hackathon</p>
-        
-
+            
+            <div class="info-panel" id="contact-panel" style="bottom: 50px; right: 300px;">
+                <h2>GET IN TOUCH</h2>
+                <a href="samita.gurung@westcliff.edu">📧 Email Me</a>
+                <br>
+                <a href="tel:9860869290">📱 Call Me</a>
+                <br>
+                <a href="https://www.github.com/samitagrg" title="Click to visit GitHub" target="_blank">🌐 GitHub</a>
+                <br>
+                <a href="linkedin.com/in/samitagrg">💼 Let's get connected</a>
+                <br>
+                <p>Feel free to reach out for collaborations, questions or just to say hi!</p>
+                <a href="./resume/Samita CV.docx.pdf" target="_blank">Check out my Resume</a>
+            </div>        
     </div>
 
 
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </body>
 </html>
